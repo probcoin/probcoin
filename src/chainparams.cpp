@@ -126,12 +126,12 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x19;
-        pchMessageStart[1] = 0x84;
-        pchMessageStart[2] = 0x03;
-        pchMessageStart[3] = 0x23;
-        vAlertPubKey = ParseHex("046fd14af252257e00914eee1ba7af0a4ca53cb2d0c0d26d2c15a41c69ccf06c87dd91cc358db8bc1fc37bcfd5106690dbe9a2347a885156cfa290581f75c2fd2a");
-        nDefaultPort = 9859;
+        pchMessageStart[0] = 0x1c;
+        pchMessageStart[1] = 0xbd;
+        pchMessageStart[2] = 0xcb;
+        pchMessageStart[3] = 0x4f;
+        vAlertPubKey = ParseHex("046372c849f7ecd230c2df573f2f009265e2ea97ee017e4fa2facd9aa87e6d52bd254e1a42259e9105a31696e209d06a3803354cd8713c25e614f51541882150d4");
+        nDefaultPort = 9887;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
@@ -179,8 +179,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (     0, uint256S("0x000009efce4c9dc78754763834d1c47adb7d83ebcb21d3219e14d1aa6e12dc91 ")),
-            1515292200, // * UNIX timestamp of last checkpoint block
+            (     0, uint256S("0x000001461fb85e27965899e39005c2e3ba5b3a297178b64a47338ddd13475e61 ")),
+            1534377600, // * UNIX timestamp of last checkpoint block
             0,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             3000        // * estimated number of transactions per day after checkpoint
@@ -248,8 +248,8 @@ public:
         pchMessageStart[1] = 0x2e;
         pchMessageStart[2] = 0xc3;
         pchMessageStart[3] = 0xd4;
-        vAlertPubKey = ParseHex("04b41abb4d27bb73a42b13465f7b65ff004c463634bd971ace190cc7679da2b4d5b95e1bb72f3b91cbff4a41f5b802fd30fdc0c4ba7391e5195db9c087cdc50bf3");
-        nDefaultPort = 19859;
+        vAlertPubKey = ParseHex("0408febf8d95cbe666de5f98931ce81434b5aa73d78571f76caeb4eb4339cb98e0ed86df88fcfcff54a9182de96bac3312cbfffa38bbf98349ddecb845d33f7c5");
+        nDefaultPort = 19887;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
@@ -295,9 +295,9 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      0, uint256S("0x000009efce4c9dc78754763834d1c47adb7d83ebcb21d3219e14d1aa6e12dc91")),
+            (      0, uint256S("000000b8369d96f026174b2791a74dc49ab6d309eb30c82c53c7145d2d070233")),
 
-            1515292200, // * UNIX timestamp of last checkpoint block
+            1534377601, // * UNIX timestamp of last checkpoint block
             0,       // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             500         // * estimated number of transactions per day after checkpoint
@@ -362,7 +362,7 @@ public:
         pchMessageStart[3] = 0xcc;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nDelayGetHeadersTime = 0; // never delay GETHEADERS in regtests
-        nDefaultPort = 19994;
+        nDefaultPort = 18334;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1515292200, 115676, 0x1e0ffff0, 1, 50 * COIN);
@@ -387,7 +387,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x000009efce4c9dc78754763834d1c47adb7d83ebcb21d3219e14d1aa6e12dc91")),
+            ( 0, uint256S("0x3df1f5ac927a58f1acb7000b2b37c67c751e37e43c66eae9cbe8b2975e59b42e")),
             0,
             0,
             0
