@@ -1,5 +1,5 @@
 ---
-name: "tincoin-dmg-signer"
+name: "probcoin-dmg-signer"
 suites:
 - "trusty"
 architectures:
@@ -8,10 +8,10 @@ packages:
 - "faketime"
 reference_datetime: "2017-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/tincoinpay/tincoin-detached-sigs.git"
+- "url": "https://github.com/probcoinpay/probcoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "tincoin-osx-unsigned.tar.gz"
+- "probcoin-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -28,10 +28,10 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=tincoin-osx-unsigned.tar.gz
-  SIGNED=tincoin-osx-signed.dmg
+  UNSIGNED=probcoin-osx-unsigned.tar.gz
+  SIGNED=probcoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   ./detached-sig-apply.sh ${UNSIGNED} signature/osx
-  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Tincoin-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
+  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "probcoin-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
   ${WRAP_DIR}/dmg dmg uncompressed.dmg ${OUTDIR}/${SIGNED}
